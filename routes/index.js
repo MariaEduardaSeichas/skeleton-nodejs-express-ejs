@@ -8,18 +8,18 @@ router.get('/', async function(req, res, next) {
   res.json(autores.rows);
 });
 
-router.get('/inserir', async function (req,res,next){
+router.post('/inserir', async function (req,res,next){
   const autores = await Autor.inserir();
   res.json(autores.rows);
 });
 
 router.get('/atualizar', async function (req,res,next){
   const autor= {
-    nome: "juliana",
+    nome: "juliana123",
     sobrenome: "brasil",
     data_nascimento: "2002/09/08"
   }
-  const autores = await Autor.atualizar(autor);
+  const autores = await Autor.atualizar(autor, 1);
   res.json(autores);
 });
 
