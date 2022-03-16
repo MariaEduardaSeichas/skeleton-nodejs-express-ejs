@@ -14,13 +14,21 @@ router.get('/inserir', async function (req,res,next){
 });
 
 router.get('/atualizar', async function (req,res,next){
-  const autores = await Autor.atualizar();
-  res.json(autores.rows);
+  const autor= {
+    nome: "juliana",
+    sobrenome: "brasil",
+    data_nascimento: "2002/09/08"
+  }
+  const autores = await Autor.atualizar(autor);
+  res.json(autores);
 });
 
 router.get('/deletar', async function (req,res,next){
-  const autores = await Autor.deletar();
-  res.json(autores.rows);
+  const deleta= {
+    id: "1",
+  }
+  const autores = await Autor.deletar(deleta);
+  res.json(autores);
 });
 
 module.exports = router;
