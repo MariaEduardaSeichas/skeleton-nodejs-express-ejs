@@ -14,12 +14,12 @@ router.post('/inserir', async function (req,res,next){
 });
 
 router.put('/atualizar', async function (req,res,next){
-  const autor= {
-    nome: "juliana123",
-    sobrenome: "brasil",
-    data_nascimento: "2002/09/08"
-  }
-  const autores = await Autor.atualizar(autor, 1);
+  // const autor= {
+  //   nome: "juliana123",
+  //   sobrenome: "brasil",
+  //   data_nascimento: "2002/09/08"
+  // }
+  const autores = await Autor.atualizar(req.body);
   res.json(autores);
 });
 
