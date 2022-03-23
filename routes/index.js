@@ -9,11 +9,11 @@ router.get('/', async function(req, res, next) {
 });
 
 router.post('/inserir', async function (req,res,next){
-  const autores = await Autor.inserir();
+  const autores = await Autor.inserir(req.body);
   res.json(autores.rows);
 });
 
-router.get('/atualizar', async function (req,res,next){
+router.put('/atualizar', async function (req,res,next){
   const autor= {
     nome: "juliana123",
     sobrenome: "brasil",
