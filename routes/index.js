@@ -23,11 +23,11 @@ router.put('/atualizar', async function (req,res,next){
   res.json(autores);
 });
 
-router.get('/deletar', async function (req,res,next){
-  const deleta= {
-    id: "1",
-  }
-  const autores = await Autor.deletar(deleta);
+router.delete('/deletar', async function (req,res,next){
+  //const deleta= {
+    //id: "1",
+  //}
+  const autores = await Autor.deletar(req.body);
   res.json(autores);
 });
 
