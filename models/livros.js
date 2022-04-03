@@ -28,4 +28,4 @@ class Livros {
   
 }
 
-module.exports = Autor;
+module.exports = Livros;
