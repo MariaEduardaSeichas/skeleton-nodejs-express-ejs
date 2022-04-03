@@ -13,13 +13,13 @@ class Livros {
     return await connect.query(sql, values);
   }
 
-  static async atualiza(data,id){
+  static async atualiza(data){
     const connect = await db.connect();
     const sql = "update livros set autor=$1, titulo=$2, editora=$3 data_publicacao=$4, preco=$5 where id=$6";
     const values = [data.nome, data.sobrenome, data.data_nascimento, data.id]
     return await connect.query(sql, values);
   }
-   static async deleta(id){
+   static async deleta(data){
     const connect = await db.connect();
     const sql = "delete from livros where id=$1 "
     const values = [data.id]
