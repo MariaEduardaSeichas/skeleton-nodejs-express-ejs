@@ -4,6 +4,7 @@ const Autor = require('../models/autor');
 const Livro = require('../models/livros');
 
 /* GET home page. */
+//rotas do autor//
 router.get('/', async function(req, res, next) {
   const autores = await Autor.selecionar();
   res.json(autores.rows);
@@ -15,24 +16,17 @@ router.post('/inserir', async function (req,res,next){
 });
 
 router.put('/atualizar', async function (req,res,next){
-  // const autor= {
-  //   nome: "juliana123",
-  //   sobrenome: "brasil",
-  //   data_nascimento: "2002/09/08"
-  // }
   const autores = await Autor.atualizar(req.body);
-  res.json(autores);
+  res.json(autores.rows);
 });
 
 router.delete('/deletar', async function (req,res,next){
-  //const deleta= {
-    //id: "1",
-  //}
   const autores = await Autor.deletar(req.body);
-  res.json(autores);
+  res.json(autores.rows);
 });
 
 /* GET home page. */
+//rotas do livro//
 router.get('/', async function(req, res, next) {
   const livros = await Livro.selecionar();
   res.json(livros.rows);
@@ -44,21 +38,22 @@ router.post('/inserir', async function (req,res,next){
 });
 
 router.put('/atualizar', async function (req,res,next){
-  // const livro= {
-  //   nome: "juliana123",
-  //   sobrenome: "brasil",
-  //   data_nascimento: "2002/09/08"
+  // const livros= {
+  //   autor: "juliana",
+  //   titulo: "uma historia de vida",
+  //   data_publicacao: "2022-09-12"
+  //   preco: $210.88
   // }
-  const livros = await livros.atualizar(req.body);
-  res.json(livros);
+  const livros = await Livro.atualizar(req.body);
+  res.json(livros.rows);
 });
 
 router.delete('/deletar', async function (req,res,next){
   //const deleta= {
     //id: "1",
   //}
-  const livros = await livros.deletar(req.body);
-  res.json(livros);
+  const livros = await Livro.deletar(req.body);
+  res.json(livros.rows);
 });
 
 module.exports = router;
