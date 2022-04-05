@@ -27,33 +27,34 @@ router.delete('/deletar', async function (req,res,next){
 
 /* GET home page. */
 //rotas do livro//
-router.get('/', async function(req, res, next) {
-  const livros = await Livro.selecionar();
+router.get('/livros', async function(req, res, next) {
+  const livros = await Livro.select();
   res.json(livros.rows);
 });
 
-router.post('/inserir', async function (req,res,next){
-  const livros = await Livro.inserir(req.body);
+router.post('/inserirlivros', async function (req,res,next){
+  const livros = await Livro.insere(req.body);
   res.json(livros.rows);
 });
 
-router.put('/atualizar', async function (req,res,next){
+router.put('/atualizarlivro', async function (req,res,next){
   // const livros= {
   //   autor: "juliana",
   //   titulo: "uma historia de vida",
   //   data_publicacao: "2022-09-12"
   //   preco: $210.88
   // }
-  const livros = await Livro.atualizar(req.body);
+  const livros = await Livro.atualiza(req.body);
   res.json(livros.rows);
 });
 
-router.delete('/deletar', async function (req,res,next){
+router.delete('/deletarlivro', async function (req,res,next){
   //const deleta= {
     //id: "1",
   //}
-  const livros = await Livro.deletar(req.body);
+  const livros = await Livro.deleta(req.body);
   res.json(livros.rows);
 });
 
+//Cria a rota para os retornar os livros de um autor
 module.exports = router;

@@ -25,7 +25,13 @@ class Autor {
     const values = [data.id]
     return await connect.query(sql, values);
   }
-  
+
+  static async livros(){
+    const connect = await db.connect();
+    const sql = "select * FROM livros WHERE id=$1"
+    const values = [data.autores]
+    return await connect.query(sql, values);
+  }
 }
 
 module.exports = Autor;

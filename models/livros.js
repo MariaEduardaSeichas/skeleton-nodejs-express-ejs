@@ -25,7 +25,7 @@ class Livros {
     const values = [data.id]
     return await connect.query(sql, values);
   }
-  
+
 }
 
 module.exports = Livros;
