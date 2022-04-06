@@ -24,6 +24,10 @@ app.use('/selecionar', indexRouter);
 app.use('/inserir', indexRouter);
 app.use('/atualizar', indexRouter);
 app.use('/deletar', indexRouter);
+app.use('/livros', indexRouter);
+app.use('/inserirlivros', indexRouter);
+app.use('/atualizarlivro', indexRouter);
+app.use('/deletarlivro', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
