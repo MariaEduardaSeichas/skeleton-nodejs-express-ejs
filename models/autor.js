@@ -28,8 +28,8 @@ class Autor {
 
   static async livros(){
     const connect = await db.connect();
-    const sql = "select * FROM livros WHERE id=$1"
-    const values = [data.autores]
+    const sql = "select * from livros where autor_id=$1";
+    const values = [data.id]
     return await connect.query(sql, values);
   }
 }

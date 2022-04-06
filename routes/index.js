@@ -32,12 +32,17 @@ router.get('/livros', async function(req, res, next) {
   res.json(livros.rows);
 });
 
+router.get('/livrosmostrar', async function(req, res, next) {
+  const livros = await Livro.selecionar_();
+  res.json(livros.rows);
+});
+
 router.post('/inserirlivros', async function (req,res,next){
   const livros = await Livro.insere(req.body);
   res.json(livros.rows);
 });
 
-router.put('/atualizarlivro', async function (req,res,next){
+router.put('/atualizarlivros', async function (req,res,next){
   // const livros= {
   //   autor: "juliana",
   //   titulo: "uma historia de vida",
@@ -48,7 +53,7 @@ router.put('/atualizarlivro', async function (req,res,next){
   res.json(livros.rows);
 });
 
-router.delete('/deletarlivro', async function (req,res,next){
+router.delete('/deletarlivros', async function (req,res,next){
   //const deleta= {
     //id: "1",
   //}
@@ -56,5 +61,4 @@ router.delete('/deletarlivro', async function (req,res,next){
   res.json(livros.rows);
 });
 
-//Cria a rota para os retornar os livros de um autor
 module.exports = router;
