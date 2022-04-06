@@ -1,2 +1,2 @@
-# Skeleton NodeJS + ExpressJS
-Repositório base para projetos NodeJS + ExpressJS
+Trabalho de PTAS2
+Aluna:Maria Eduarda Ferreira de Oliveira Brito Seichas
