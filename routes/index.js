@@ -32,11 +32,6 @@ router.get('/livros', async function(req, res, next) {
   res.json(livros.rows);
 });
 
-router.get('/livrosmostrar', async function(req, res, next) {
-  const livros = await Livro.selecionar_();
-  res.json(livros.rows);
-});
-
 router.post('/inserirlivros', async function (req,res,next){
   const livros = await Livro.insere(req.body);
   res.json(livros.rows);
