@@ -3,7 +3,7 @@ const db = require("../db")
 class Autor {
   static async selecionar() {
     const connect = await db.connect();
-    return await connect.query("select * from autores");
+    return await connect.query("select from autores");
   }
   
   static async inserir(data) {
@@ -28,7 +28,7 @@ class Autor {
 
   static async livros(){
     const connect = await db.connect();
-    const sql = "select * from livros where autor_id=$1";
+    const sql = "select from livros where autor id=$1";
     const values = [data.id]
     return await connect.query(sql, values);
   }
